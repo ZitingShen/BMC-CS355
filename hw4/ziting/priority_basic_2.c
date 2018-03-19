@@ -38,7 +38,7 @@ int main(void) {
   printf("Test case for PRIORITY given %i threads per priority.\n", THREADS_NUM);
   printf("Print \"Hello, world! <priority>\" for %i times per priority on success.\n", THREADS_NUM);
 
-  for(i = 0; i < THREAD_NUM; i++) {
+  for(i = 0; i < THREADS_NUM; i++) {
     if (thread_join(tid_n1[i]) < 0) exit(EXIT_FAILURE);
     if (thread_join(tid_0[i]) < 0) exit(EXIT_FAILURE);
     if (thread_join(tid_1[i]) < 0) exit(EXIT_FAILURE);
