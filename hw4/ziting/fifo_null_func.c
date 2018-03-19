@@ -13,7 +13,12 @@ int main(void) {
   int tid_1 = thread_create(NULL, hello_str, 0);
 
   printf("Simplest test case for FIFO.\n");
-  printf("Print \"Hello, world!\" on success.\n");
+  printf("Print \"Fail to create thread.\" on success.\n");
+
+  if(tid_1 == -1) {
+  	printf("Fail to create thread.\n");
+  	exit(EXIT_FAILURE);
+  }
 
   if (thread_join(tid_1) < 0) exit(EXIT_FAILURE);
 
