@@ -12,7 +12,7 @@ int main(void) {
   char *hello_str = "Hello, world!";
   int tid_1 = thread_create(hello, hello_str, 0);
 
-  printf("Simplest test case for FIFO.\n");
+  printf("Test case for FIFO. Attempt to join an non-existing thread.\n");
   printf("Print \"Failed to join thread.\" on success.\n");
 
   if (thread_join(-1) < 0) {
