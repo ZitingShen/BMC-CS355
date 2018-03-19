@@ -37,9 +37,9 @@ int main(void) {
 	if (thread_libinit(SJF) == -1) exit(EXIT_FAILURE);
 
 	char *hello_str = "Hello, world!";
-	int tid_1 = thread_create(hello, hello_str, 0);
-	int tid_2 = thread_create(hello, hello_str, 0);
-	int tid_3 = thread_create(hello, hello_str, 0);
+	int tid_1 = thread_create(hello_100, hello_str, 0);
+	int tid_2 = thread_create(hello_150, hello_str, 0);
+	int tid_3 = thread_create(hello_200, hello_str, 0);
 
 	printf("Test case for SJF.\n");
 	printf("Print \"Hello, world! 100\", \"Hello, world! 150\", \"Hello, world! 200\" on success.\n");
