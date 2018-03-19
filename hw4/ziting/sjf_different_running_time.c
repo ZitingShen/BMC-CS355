@@ -43,7 +43,7 @@ int main(void) {
 
 	printf("Test case for SJF.\n");
 	printf("Print \"Hello, world! 100\", \"Hello, world! 150\", \"Hello, world! 200\" on success.\n");
-	printf("The order cannot be inversed.\n");
+	printf("The order cannot be inverted.\n");
 
 	if (thread_join(tid_1) < 0) exit(EXIT_FAILURE);
 	if (thread_join(tid_2) < 0) exit(EXIT_FAILURE);
