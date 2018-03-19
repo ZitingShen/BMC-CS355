@@ -15,7 +15,7 @@ void hello_1(void *arg) {
 }
 
 int main(void) {
-  if (thread_libinit(SJF) == -1) exit(EXIT_FAILURE);
+  if (thread_libinit(PRIORITY) == -1) exit(EXIT_FAILURE);
 
   char *hello_str = "Hello, world!";
   int tid_1 = thread_create(hello_n1, hello_str, 0);
