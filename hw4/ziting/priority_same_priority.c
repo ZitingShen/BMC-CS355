@@ -3,7 +3,7 @@
 #include "userthread.h"
 
 #define THREADS_NUM   10
-#define TEST_PRIORITY -1
+#define TEST_PRIORITY 0
 
 void hello(void *arg) {
   printf("%s\n", arg);
