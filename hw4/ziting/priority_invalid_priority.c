@@ -7,12 +7,12 @@ void hello(void *arg) {
 }
 
 int main(void) {
-  if (thread_libinit(FIFO) == -1) exit(EXIT_FAILURE);
+  if (thread_libinit(PRIORITY) == -1) exit(EXIT_FAILURE);
 
   char *hello_str = "Hello, world!";
-  int tid_1 = thread_create(NULL, hello_str, 0);
+  int tid_1 = thread_create(NULL, hello_str, -10);
 
-  printf("Test case for FIFO given NULL as the funciton pointer.\n");
+  printf("Test case for PRIORITY given -10 as the priority.\n");
   printf("Print \"Fail to create thread.\" on success.\n");
 
   if(tid_1 == -1) {
