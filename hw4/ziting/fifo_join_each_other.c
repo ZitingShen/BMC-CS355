@@ -21,8 +21,8 @@ int main(void) {
   tid_1 = thread_create(hello, hello_str, 0);
   tid_2 = thread_create(hello, hello_str, 0);
 
-  printf("Test case for FIFO. 2 threads join each other.\n");
-  printf("Print \"Hello, world!\" twice on success.\n");
+  printf("Test case for FIFO. 2 threads join each other to create deadlock.\n");
+  printf("The program gets stuck and prints nothing on success.\n");
 
   if (thread_join(tid_1) < 0) exit(EXIT_FAILURE);
   if (thread_join(tid_2) < 0) exit(EXIT_FAILURE);
