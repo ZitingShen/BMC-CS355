@@ -3,13 +3,13 @@
 #include <stdlib.h>
 #include "userthread.h"
 
-void hello_90(void *arg) {
-	poll(NULL, 0, 90);
+void hello_120(void *arg) {
+	poll(NULL, 0, 120);
 	thread_yield();
-	poll(NULL, 0, 90);
+	poll(NULL, 0, 120);
 	thread_yield();
 	poll(NULL, 0, 200);
-	printf("%s 90\n", arg);
+	printf("%s 120\n", arg);
 }
 
 void hello_150(void *arg) {
@@ -34,12 +34,12 @@ int main(void) {
 	if (thread_libinit(SJF) == -1) exit(EXIT_FAILURE);
 
 	char *hello_str = "Hello, world!";
-	int tid_1 = thread_create(hello_90, hello_str, 0);
+	int tid_1 = thread_create(hello_120, hello_str, 0);
 	int tid_2 = thread_create(hello_150, hello_str, 0);
 	int tid_3 = thread_create(hello_170, hello_str, 0);
 
 	printf("Test case for SJF.\n");
-	printf("Print \"Hello, world! 150\", \"Hello, world! 170\", \"Hello, world! 90\" on success.\n");
+	printf("Print \"Hello, world! 120\", \"Hello, world! 150\", \"Hello, world! 170\" on success.\n");
 	printf("The order cannot be inverted.\n");
 
 	if (thread_join(tid_1) < 0) exit(EXIT_FAILURE);
