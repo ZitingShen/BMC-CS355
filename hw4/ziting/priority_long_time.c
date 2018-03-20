@@ -17,7 +17,7 @@ int main(void) {
   int tid_1 = thread_create(hello, hello_str, -1);
 
   printf("Test case for PRIORITY. The thread will be scheduled for 15 times.\n");
-  printf("Print \"Hello, world! <priority>\" for 3 times on success.\n");
+  printf("Print \"Hello, world!\" on success.\n");
 
   if (thread_join(tid_1) < 0) exit(EXIT_FAILURE);
 
