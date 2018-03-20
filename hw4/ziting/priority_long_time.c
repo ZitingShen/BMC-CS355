@@ -14,7 +14,7 @@ int main(void) {
   if (thread_libinit(PRIORITY) == -1) exit(EXIT_FAILURE);
 
   char *hello_str = "Hello, world!";
-  int tid_1 = thread_create(hello_n1, hello_str, -1);
+  int tid_1 = thread_create(hello, hello_str, -1);
 
   printf("Test case for PRIORITY. The thread will be scheduled for 15 times.\n");
   printf("Print \"Hello, world! <priority>\" for 3 times on success.\n");
